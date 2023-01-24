@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var cameraExecutor: ExecutorService
 
-    private var tfLiteClassifier: TFLiteClassifier = TFLiteClassifier(this@MainActivity)
+    private var tfLiteClassifier: ModelClassifier = ModelClassifier(this@MainActivity)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

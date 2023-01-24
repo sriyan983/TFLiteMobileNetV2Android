@@ -20,7 +20,7 @@ import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.gpu.GpuDelegate
 import java.util.concurrent.Future
 
-class TFLiteClassifier(private val context: Context) {
+class ModelClassifier(private val context: Context) {
 
     private var interpreter: Interpreter? = null
     var isInitialized = false
@@ -52,7 +52,7 @@ class TFLiteClassifier(private val context: Context) {
         labels = loadLines(context, "labels02.txt")
         val options = Interpreter.Options()
         gpuDelegate = GpuDelegate()
-            options.addDelegate(gpuDelegate)
+        options.addDelegate(gpuDelegate)
         val interpreter = Interpreter(model, options)
 
         val inputShape = interpreter.getInputTensor(0).shape()
